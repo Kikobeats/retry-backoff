@@ -48,23 +48,27 @@ Creates a backoff function.
 ##### timeout
 
 Type: `number`</br>
-Default: `0`
+Default: `30000`
+
+Setup the time (in milliseconds) after consider a request timeout.
 
 ##### retries
 
 Type: `number`</br>
 Default: `5`
 
+Number of retries before throw a final error.
+
 ##### backoff
 
 Type: `function`</br>
 Default: `fibonacci`
 
-The backoff method for calculate the delay between sucesive calls.
+The method uses for calculate the incremental delay between sucesive calls.
 
 ### .reset
 
-Reset the counter of the invoke backoff function.
+Restart the `retries` counter.
 
 ## License
 

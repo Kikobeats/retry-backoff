@@ -1,51 +1,54 @@
 'use strict'
 
-var isRetryAllowed = require('is-retry-allowed')
-var debug = require('debug')('retry-backoff')
-var timeout = require('callback-timeout')
+const debug = require('debug')(require('./package.json').name)
+const isRetryAllowed = require('is-retry-allowed')
+const addTimeout = require('callback-timeout')
 
-var DEFAULT = {
-  timeout: 0,
+const DEFAULT = {
+  timeout: 30000,
   retries: 5,
-  backoff: function (seed) {
-    var noise = Math.random() * 100
+  backoff: (seed) => {
+    const noise = Math.random() * 100
     return (1 << seed) * 1000 + noise
   }
 }
 
-function retryBackoff (opts) {
+function createRetryBackoff (opts) {
   opts = Object.assign(DEFAULT, opts)
 
-  var retryCount = 0
+  const {timeout, retries, backoff} = opts
+  const retryCount = 0
 
-  function backoff (fn, cb) {
-    var args = arguments
+  function getRetry (err) {
+    if (retryCount > retries || !isRetryAllowed(err)) return 0
+    backoff(retryCount)
+  }
+
+  function retryBackoff (fn, cb) {
+    const args = arguments
 
     function handleCallback (err) {
       if (!err) return cb.apply(cb, arguments)
 
       ++retryCount
-      var retry
-
-      if (retryCount > opts.retries || !isRetryAllowed(err)) retry = 0
-      else retry = opts.backoff(retryCount)
+      const retry = getRetry(err)
 
       if (!retry) return cb.apply(cb, arguments)
 
       setTimeout(function () {
         debug('retry: %sms', retry)
-        return backoff.apply(fn, args)
+        return retryBackoff.apply(fn, args)
       }, retry)
     }
 
-    return fn(timeout(handleCallback, opts.timeout))
+    return fn(addTimeout(handleCallback, timeout))
   }
 
   backoff.reset = function reset () {
     retryCount = 0
   }
 
-  return backoff
+  return retryBackoff
 }
 
-module.exports = retryBackoff
+module.exports = createRetryBackoff
