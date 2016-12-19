@@ -47,17 +47,17 @@ Creates a backoff function.
 
 ##### timeout
 
-Type: `number`
+Type: `number`</br>
 Default: `0`
 
 ##### retries
 
-Type: `number`
+Type: `number`</br>
 Default: `5`
 
 ##### backoff
 
-Type: `function`
+Type: `function`</br>
 Default: `fibonacci`
 
 The backoff method for calculate the delay between sucesive calls.
