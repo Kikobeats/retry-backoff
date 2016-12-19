@@ -20,15 +20,12 @@
     "backoff",
     "callback",
     "retry",
-    "stream",
     "timeout"
   ],
   "dependencies": {
     "callback-timeout": "~2.1.0",
     "debug": "~2.2.0",
-    "is-retry-allowed": "~1.0.0",
-    "is-stream": "~1.1.0",
-    "stream-callback": "~1.0.2"
+    "is-retry-allowed": "~1.0.0"
   },
   "devDependencies": {
     "coffee-script": "latest",

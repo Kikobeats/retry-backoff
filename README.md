@@ -7,7 +7,7 @@
 [![NPM Status](https://img.shields.io/npm/dm/retry-backoff.svg?style=flat-square)](https://www.npmjs.org/package/retry-backoff)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> Stream/callback retries with incremental backoff and timeout support.
+> Handle callback retries with incremental backoff and timeout support.
 
 ## Install
 
@@ -45,15 +45,22 @@ Creates a backoff function.
 
 #### options
 
+##### timeout
+
+Type: `number`
+Default: `0`
+
 ##### retries
 
 Type: `number`
 Default: `5`
 
-##### timeout
+##### backoff
 
-Type: `number`
-Default: `0`
+Type: `function`
+Default: `fibonacci`
+
+The backoff method for calculate the delay between sucesive calls.
 
 ### .reset
 

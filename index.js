@@ -1,19 +1,16 @@
 'use strict'
 
-var debug = require('debug')('retry-backoff')
 var isRetryAllowed = require('is-retry-allowed')
-var streamCb = require('stream-callback')
+var debug = require('debug')('retry-backoff')
 var timeout = require('callback-timeout')
-var isStream = require('is-stream')
 
 var DEFAULT = {
+  timeout: 0,
   retries: 5,
-  timeout: 0
-}
-
-function calculateBackoff (seed) {
-  var noise = Math.random() * 100
-  return (1 << seed) * 1000 + noise
+  backoff: function (seed) {
+    var noise = Math.random() * 100
+    return (1 << seed) * 1000 + noise
+  }
 }
 
 function retryBackoff (opts) {
@@ -23,7 +20,6 @@ function retryBackoff (opts) {
 
   function backoff (fn, cb) {
     var args = arguments
-    if (isStream(fn)) fn = streamCb.bind(streamCb, fn)
 
     function handleCallback (err) {
       if (!err) return cb.apply(cb, arguments)
@@ -32,7 +28,7 @@ function retryBackoff (opts) {
       var retry
 
       if (retryCount > opts.retries || !isRetryAllowed(err)) retry = 0
-      else retry = calculateBackoff(retryCount)
+      else retry = opts.backoff(retryCount)
 
       if (!retry) return cb.apply(cb, arguments)
 
