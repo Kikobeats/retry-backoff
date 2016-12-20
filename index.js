@@ -17,11 +17,11 @@ function createRetryBackoff (opts) {
   opts = Object.assign(DEFAULT, opts)
 
   const {timeout, retries, backoff} = opts
-  let retryCount = 0
+  let count = 0
 
-  function getRetry (err) {
-    if (retryCount > retries || !isRetryAllowed(err)) return 0
-    backoff(retryCount)
+  function getRetryDelay (err) {
+    if (count > retries || !isRetryAllowed(err)) return 0
+    return backoff(count)
   }
 
   function retryBackoff (fn, cb) {
@@ -30,22 +30,22 @@ function createRetryBackoff (opts) {
     function handleCallback (err) {
       if (!err) return cb.apply(cb, arguments)
 
-      ++retryCount
-      const retry = getRetry(err)
+      ++count
+      const delay = getRetryDelay(err)
+      debug('count=%s, delay=%s', count, delay)
 
-      if (!retry) return cb.apply(cb, arguments)
+      if (!delay) return cb.apply(cb, arguments)
 
       setTimeout(function () {
-        debug('retry: %sms', retry)
         return retryBackoff.apply(fn, args)
-      }, retry)
+      }, delay)
     }
 
     return fn(addTimeout(handleCallback, timeout))
   }
 
   retryBackoff.reset = function reset () {
-    retryCount = 0
+    count = 0
   }
 
   return retryBackoff

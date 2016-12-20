@@ -61,7 +61,7 @@ Number of retries before throw a final error.
 ##### backoff
 
 Type: `function`</br>
-Default: `fibonacci`
+Default: `1000 * Math.pow(2, retry) + Math.random() * 100`
 
 The method uses for calculate the incremental delay between sucesive calls.
 
