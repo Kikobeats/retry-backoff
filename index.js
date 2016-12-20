@@ -17,7 +17,7 @@ function createRetryBackoff (opts) {
   opts = Object.assign(DEFAULT, opts)
 
   const {timeout, retries, backoff} = opts
-  const retryCount = 0
+  let retryCount = 0
 
   function getRetry (err) {
     if (retryCount > retries || !isRetryAllowed(err)) return 0
@@ -44,7 +44,7 @@ function createRetryBackoff (opts) {
     return fn(addTimeout(handleCallback, timeout))
   }
 
-  backoff.reset = function reset () {
+  retryBackoff.reset = function reset () {
     retryCount = 0
   }
 
