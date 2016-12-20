@@ -16,7 +16,11 @@ const DEFAULT = {
 function createRetryBackoff (opts) {
   opts = Object.assign(DEFAULT, opts)
 
-  const {timeout, retries, backoff} = opts
+  /* node 4 support ¯\_(ツ)_/¯ */
+  const timeout = opts.timeout
+  const retries = opts.retries
+  const backoff = opts.backoff
+
   let count = 0
 
   function getRetryDelay (err) {
