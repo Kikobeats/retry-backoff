@@ -54,7 +54,7 @@ describe(pkg.name, function () {
       const now = Date.now()
       const diff = now - timestamp
 
-      diff.should.be.within(2000, 2100)
+      diff.should.be.within(2000, 2200)
       err.should.be.eql({code: 'ETIMEDOUT'})
       result.should.be.eql({foo: 'bar'})
       done()
@@ -74,7 +74,7 @@ describe(pkg.name, function () {
 
     const timestamp = Date.now()
 
-    retryBackoff(fn, function (err, result) {
+    retryBackoff(fn, function (err, result) { // eslint-disable-line
       retryBackoff.reset()
 
       retryBackoff(fn, function (err, result) {
