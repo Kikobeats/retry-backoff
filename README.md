@@ -18,23 +18,22 @@ $ npm install retry-backoff --save
 ## Usage
 
 ```js
-var retryBackoff = require('retry-backoff')
+const createRetryBackoff = require('retry-backoff')
 
-function fn() {
-  setTimeout({
-    console.log('calling callback')
+function fn (cb) {
+  setTimeout(function () {
     return cb(null, {foo: 'bar'})
   }, 1000)
-
 }
 
-backoff = retryBackoff()
+const retryBackoff = createRetryBackoff()
 
-backoff(fn, function(err, result) {
+retryBackoff(fn, function (err, result) {
   if (err) throw err
-  backoff.reset()
+  retryBackoff.reset()
   console.log(result) // => {foo: 'bar'}
 })
+
 ```
 
 ## API
