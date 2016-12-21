@@ -6,7 +6,7 @@ const addTimeout = require('callback-timeout')
 
 const DEFAULT = {
   timeout: 30000,
-  retries: 5,
+  retries: 3,
   backoff: (seed) => {
     const noise = Math.random() * 100
     return (1 << seed) * 1000 + noise

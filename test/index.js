@@ -74,7 +74,7 @@ describe(pkg.name, function () {
 
     const timestamp = Date.now()
 
-    retryBackoff(fn, function (err, result) { // eslint-disable-line
+    retryBackoff(fn, function (err, result) { // eslint-disable
       retryBackoff.reset()
 
       retryBackoff(fn, function (err, result) {

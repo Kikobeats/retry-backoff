@@ -54,7 +54,7 @@ Setup the time (in milliseconds) after consider a request timeout.
 ##### retries
 
 Type: `number`</br>
-Default: `5`
+Default: `3`
 
 Number of retries before throw a final error.
 
