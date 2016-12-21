@@ -1,3 +1,12 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2016-12-21)
+
+* 5 → 3 as max retries by default ([393079a](https://github.com/AudienseCo/retry-backoff/commit/393079a))
+* Update repository references ([a3102e8](https://github.com/AudienseCo/retry-backoff/commit/a3102e8))
+* chore(package): update debug to version 2.5.1 ([a0cfb69](https://github.com/AudienseCo/retry-backoff/commit/a0cfb69))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2016-12-20)
 
