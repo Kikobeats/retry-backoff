@@ -1,7 +1,7 @@
 {
   "name": "retry-backoff",
   "description": "Stream/callback retries with incremental backoff and timeout support.",
-  "homepage": "https://github.com/Kikobeats/retry-backoff",
+  "homepage": "https://github.com/AudienseCo/retry-backoff",
   "version": "1.0.0",
   "main": "index.js",
   "author": {
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kikobeats/retry-backoff.git"
+    "url": "git+https://github.com/AudienseCo/retry-backoff.git"
   },
   "bugs": {
-    "url": "https://github.com/Kikobeats/retry-backoff/issues"
+    "url": "https://github.com/AudienseCo/retry-backoff/issues"
   },
   "keywords": [
     "backoff",

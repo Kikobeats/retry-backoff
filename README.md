@@ -1,11 +1,11 @@
 # retry-backoff
 
-![Last version](https://img.shields.io/github/tag/Kikobeats/retry-backoff.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/Kikobeats/retry-backoff/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/retry-backoff)
-[![Dependency status](https://img.shields.io/david/Kikobeats/retry-backoff.svg?style=flat-square)](https://david-dm.org/Kikobeats/retry-backoff)
-[![Dev Dependencies Status](https://img.shields.io/david/dev/Kikobeats/retry-backoff.svg?style=flat-square)](https://david-dm.org/Kikobeats/retry-backoff#info=devDependencies)
+![Last version](https://img.shields.io/github/tag/AudienseCo/retry-backoff.svg?style=flat-square)
+[![Build Status](https://img.shields.io/travis/AudienseCo/retry-backoff/master.svg?style=flat-square)](https://travis-ci.org/AudienseCo/retry-backoff)
+[![Dependency status](https://img.shields.io/david/AudienseCo/retry-backoff.svg?style=flat-square)](https://david-dm.org/AudienseCo/retry-backoff)
+[![Dev Dependencies Status](https://img.shields.io/david/dev/AudienseCo/retry-backoff.svg?style=flat-square)](https://david-dm.org/AudienseCo/retry-backoff#info=devDependencies)
 [![NPM Status](https://img.shields.io/npm/dm/retry-backoff.svg?style=flat-square)](https://www.npmjs.org/package/retry-backoff)
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
+[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/AudienseCo)
 
 > Handle callback retries with incremental backoff and timeout support.
 
@@ -71,4 +71,4 @@ Restart the `retries` counter.
 
 ## License
 
-MIT © [Kiko Beats](http://kikobeats.com)
+MIT © [AudienseCo](https://audiense.com/)
