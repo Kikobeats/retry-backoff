@@ -24,7 +24,7 @@ function createRetryBackoff (opts) {
   let count = 0
 
   function getRetryDelay (err) {
-    if (count > retries || !isRetryAllowed(err)) return 0
+    if (!isRetryAllowed(err) || count > retries) return 0
     return backoff(count)
   }
 
