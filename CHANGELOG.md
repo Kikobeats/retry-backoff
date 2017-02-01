@@ -1,3 +1,13 @@
+<a name="1.0.2"></a>
+## 1.0.2 (2017-02-01)
+
+* Fix handle ETIMEDOUT ([5196ad7](https://github.com/AudienseCo/retry-backoff/commit/5196ad7))
+* Fix typo ([f5411c9](https://github.com/AudienseCo/retry-backoff/commit/f5411c9))
+* Sort conditions ([fd76117](https://github.com/AudienseCo/retry-backoff/commit/fd76117))
+* Update callback-timeout dependency ([89f136c](https://github.com/AudienseCo/retry-backoff/commit/89f136c))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2016-12-21)
 

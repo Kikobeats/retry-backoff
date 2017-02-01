@@ -2,7 +2,7 @@
   "name": "retry-backoff",
   "description": "Stream/callback retries with incremental backoff and timeout support.",
   "homepage": "https://github.com/AudienseCo/retry-backoff",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
