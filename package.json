@@ -23,7 +23,7 @@
     "timeout"
   ],
   "dependencies": {
-    "callback-timeout": "github:kikobeats/callback-timeout#etimedout",
+    "callback-timeout": "~3.0.0",
     "debug": "~2.5.1",
     "is-retry-allowed": "~1.1.0",
     "mimic-fn": "~1.1.0"
