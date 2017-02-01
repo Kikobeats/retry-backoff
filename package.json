@@ -23,9 +23,10 @@
     "timeout"
   ],
   "dependencies": {
-    "callback-timeout": "~2.1.0",
+    "callback-timeout": "github:kikobeats/callback-timeout#etimedout",
     "debug": "~2.5.1",
-    "is-retry-allowed": "~1.1.0"
+    "is-retry-allowed": "~1.1.0",
+    "mimic-fn": "~1.1.0"
   },
   "devDependencies": {
     "coffee-script": "latest",

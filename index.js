@@ -3,6 +3,7 @@
 const debug = require('debug')(require('./package.json').name)
 const isRetryAllowed = require('is-retry-allowed')
 const addTimeout = require('callback-timeout')
+const mimicFn = require('mimic-fn')
 
 const DEFAULT = {
   timeout: 30000,
@@ -29,23 +30,22 @@ function createRetryBackoff (opts) {
   }
 
   function retryBackoff (fn, cb) {
-    const args = arguments
+    const fnArgs = arguments
 
     function handleCallback (err) {
       if (!err) return cb.apply(cb, arguments)
-
       ++count
-      const delay = getRetryDelay(err)
-      debug('count=%s, delay=%s', count, delay)
 
+      const delay = getRetryDelay(err)
       if (!delay) return cb.apply(cb, arguments)
 
-      setTimeout(function () {
-        return retryBackoff.apply(fn, args)
-      }, delay)
+      debug('count=%s, delay=%s, cb=%s', count, delay, fn.name)
+      return setTimeout(() => retryBackoff.apply(fn, fnArgs), delay)
     }
 
-    return fn(addTimeout(handleCallback, timeout))
+    mimicFn(handleCallback, fn)
+    const timeoutWrapper = addTimeout(handleCallback, timeout)
+    return fn(timeoutWrapper)
   }
 
   retryBackoff.reset = function reset () {
