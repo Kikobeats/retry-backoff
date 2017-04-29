@@ -33,8 +33,9 @@ retryBackoff(fn, function (err, result) {
   retryBackoff.reset()
   console.log(result) // => {foo: 'bar'}
 })
-
 ```
+
+If you need to see low level logs, enable it using `DEBUG=retry-backoff`.
 
 ## API
 
