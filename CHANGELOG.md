@@ -1,3 +1,12 @@
+<a name="1.0.3"></a>
+## 1.0.3 (2017-04-29)
+
+* Add note about logging ([2fb9847](https://github.com/AudienseCo/retry-backoff/commit/2fb9847))
+* Better naming ([d36354c](https://github.com/AudienseCo/retry-backoff/commit/d36354c))
+* Update dependencies ([aac50b3](https://github.com/AudienseCo/retry-backoff/commit/aac50b3))
+
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2017-02-01)
 
