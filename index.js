@@ -30,7 +30,7 @@ function createRetryBackoff (opts) {
   }
 
   function retryBackoff (fn, cb) {
-    const fnArgs = arguments
+    const args = arguments
 
     function handleCallback (err) {
       if (!err) return cb.apply(cb, arguments)
@@ -40,7 +40,7 @@ function createRetryBackoff (opts) {
       if (!delay) return cb.apply(cb, arguments)
 
       debug('count=%s, delay=%s, cb=%s', count, delay, fn.name)
-      return setTimeout(() => retryBackoff.apply(fn, fnArgs), delay)
+      return setTimeout(() => retryBackoff.apply(fn, args), delay)
     }
 
     mimicFn(handleCallback, fn)
