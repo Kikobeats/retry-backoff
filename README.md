@@ -1,5 +1,7 @@
 # retry-backoff
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/AudienseCo/retry-backoff.svg)](https://greenkeeper.io/)
+
 ![Last version](https://img.shields.io/github/tag/AudienseCo/retry-backoff.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/AudienseCo/retry-backoff/master.svg?style=flat-square)](https://travis-ci.org/AudienseCo/retry-backoff)
 [![Dependency status](https://img.shields.io/david/AudienseCo/retry-backoff.svg?style=flat-square)](https://david-dm.org/AudienseCo/retry-backoff)
