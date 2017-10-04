@@ -15,7 +15,7 @@ const DEFAULT = {
 }
 
 function createRetryBackoff (opts) {
-  opts = Object.assign(DEFAULT, opts)
+  opts = Object.assign({}, DEFAULT, opts)
   const {timeout, retries, backoff} = opts
 
   let count = 0
