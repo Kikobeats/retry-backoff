@@ -64,7 +64,7 @@ Number of retries before throw a final error.
 Type: `function`</br>
 Default: `1000 * Math.pow(2, retry) + Math.random() * 100`
 
-The method uses for calculate the incremental delay between sucesive calls.
+The method uses for calculate the incremental delay between sucesive calls, where `retry` is attempt number (starts from 0).
 
 ### .reset
 
