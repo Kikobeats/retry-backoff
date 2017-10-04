@@ -1,3 +1,16 @@
+<a name="1.0.4"></a>
+## 1.0.4 (2017-10-04)
+
+* Avoid mutate state ([90c56ae](https://github.com/AudienseCo/retry-backoff/commit/90c56ae))
+* Drop node4 support ([128e7a5](https://github.com/AudienseCo/retry-backoff/commit/128e7a5))
+* Update doc ([6122cfb](https://github.com/AudienseCo/retry-backoff/commit/6122cfb))
+* Update README.md ([d870a1c](https://github.com/AudienseCo/retry-backoff/commit/d870a1c))
+* fix(package): update debug to version 3.0.0 ([e403db2](https://github.com/AudienseCo/retry-backoff/commit/e403db2))
+* fix(package): update debug to version 3.1.0 ([69670af](https://github.com/AudienseCo/retry-backoff/commit/69670af))
+* docs(readme): add Greenkeeper badge ([e69418f](https://github.com/AudienseCo/retry-backoff/commit/e69418f))
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2017-04-29)
 
