@@ -23,7 +23,7 @@
     "timeout"
   ],
   "dependencies": {
-    "callback-timeout": "~3.0.0",
+    "callback-timeout": "~4.0.0",
     "debug": "~3.1.0",
     "is-retry-allowed": "~1.1.0",
     "mimic-fn": "~1.2.0"
